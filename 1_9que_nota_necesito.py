@@ -1,29 +1,19 @@
-###Programa que saca el promedio de una calificación final
+# Programa que saca el promedio de una calificación final
 # que consta de el promedio de 3 calificaciones que son el30%
-### y la calificación del laboratorio que es el 70% de la califciación final
-###El alumno ingresará solo dos calificaciones y el laboratorio
-#el programa dirá cual debe ser el mínimo en su 3era calificación para pasarla materia.
-
-cert_1 = input("ingrese nota de certamen 1: ")
-cert_2 = input("ingrese nota de certamen 2: ")
-lab = input("ingrese nota de laboratorio: ")
-##Aqui convierto a enteros las variables que voy a utilizar
-c1_int = int(cert_1)
-c2_int = int(cert_2)
-Nl = int(lab)
-Nc = float
-Nc_min = float
-Nc = ((c1_int+c2_int)/3) #Nota promedio de 3 calif
-Nf = ((Nc*.7)+(Nl*.3)) ##Nota final
-
-if Nf >= 60:
-  print("felicidades,ya pasaste la materia con un mínimo de: ",Nf)
+# y la calificación del laboratorio que es el 70% de la califciación final
+# El alumno ingresará solo dos calificaciones y el laboratorio
+# el programa dirá cual debe ser el mínimo en su 3era calificación
+# para pasarla materia.
+nota_1 = int(input("ingrese nota de certamen 1: "))
+nota_2 = int(input("ingrese nota de certamen 2: "))
+nota_lab = int(input("ingrese nota de laboratorio: "))
+nota_min = float
+nota_prom = ((nota_1+nota_2)/3)  # Nota promedio de 3 calif
+nota_final = ((nota_prom*.7)+(nota_lab*.3))  # Nota final
+if nota_final >= 60:
+    print("felicidades,ya pasaste la materia con un mínimo de: ", nota_final)
 else:
-    Nc_min = 60-(Nl*.3) #Busca el promedio minimo de las 3 calificaciones que debe tener
-    divide = float (Nc_min /.7)# empieza la operación inversa para despejar c3_int
-    c3_int = int((divide*3)-(c1_int+c2_int))
-
-     #print("imprime Nv_min: ", Nc_min)
-     #print ("imprime divide: ", divide )
-    print("La calificación mínima que debes obtener es:", c3_int)
-
+    prom_min = 60-(nota_lab * .3)  # Busca promedio minimo de las 3 calif
+    divide = float(prom_min / .7)  # operación inversa para despejar c3_int
+    calf_min_final = int((divide*3)-(nota_1+nota_2))
+    print("La calificación mínima que debes obtener es:", calf_min_final)
