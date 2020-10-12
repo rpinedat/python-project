@@ -18,10 +18,10 @@ if jug_a <= 7 and jug_b <= 7:
     elif jug_a < 0 or jug_b < 0:
         print("entrada invalida")
 
-    elif jug_a == 7 and jug_b > 4 and jug_b < 7:
+    elif (jug_a == 7) and (jug_b > 4) and (jug_b < 7):
         print("Ganó A")
 
-    elif jug_b == 7 and jug_a > 4 and jug_a < 7:
+    elif (jug_b == 7) and (jug_a > 4) and (jug_a < 7):
         print("Ganó B")
 
     elif jug_a == 7 and jug_b < 5:
