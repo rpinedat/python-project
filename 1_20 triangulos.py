@@ -7,10 +7,10 @@ c = float(input("Ingrese c: "))
 
 if a+b > c and b+c > a and c+a > b:
 
-    if a != b and b != c and a != c:
+    if a != b and b != c:
         print("Es un triángulo escaleno")
 
-    elif a == b and a == c and b == c:
+    elif a == b and b == c:
         print("Es un triángulo equilatero")
 
     else:
