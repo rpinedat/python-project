@@ -1,5 +1,4 @@
 # Devuelve la masa corporal y el riesgo de enfemedades coronarias
-# Rocio Pineda
 
 estatura = float(input("Ingrese su estatura en mts: "))
 peso = float(input("Ingrese su peso en kg: "))

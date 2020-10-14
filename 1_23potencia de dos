@@ -1,0 +1,13 @@
+# Genera desde la 0-ésima potencia de 2 hasta la ingresada
+
+num_veces = input("Ingrese numero entero: ")
+if num_veces.isdigit():
+    num_veces = int(num_veces)
+    i = 0
+    while i <= num_veces:
+        x = pow(2, i)
+        print("", x)
+        i = i+1
+
+else:
+    print("No es un número válido")
