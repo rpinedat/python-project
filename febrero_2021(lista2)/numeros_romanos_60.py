@@ -1,26 +1,12 @@
-# Escriba la función romano_a_arabigo que reciba un string con un número
-# en notación romana, y entregue el entero equivalente:
-
-# def romano_a_arabigo(cadena):
-#     M = 1000
-#     D = 500
-#     C = 100
-#     L = 50
-#     X = 10
-#     V = 5
-#     I = 1
-#
-#     count = 0
-
-# numero_romano debe ser un String
+# Números Romanos por Rocio Pineda Tecpa
 
 
-def romano_a_arabigo(numero_romano):
-    # Resultado de la transformacion
-    resultado = 0
+def romanos(numero):
+    res = 0
+    i = 0
+    count = 0
+    long = len(numero)
 
-    # Usamos un diccionario, ya que se adapta al concepto
-    # de que a cada letra le corresponde un valor
     valores = {
         'M': 1000,
         'D': 500,
@@ -28,44 +14,46 @@ def romano_a_arabigo(numero_romano):
         'L': 50,
         'X': 10,
         'V': 5,
-        'I': 1
+        'I': 1,
+
     }
 
-    if len(numero_romano) > 0:
-        # Con esto, siempre sumamos el primer numero
-        valor_anterior = numero_romano[0]
+    while count < long:
 
-    # Por cada letra en el numero romano (string)
-    for letra in numero_romano:
+        if numero[i] in valores:
 
-        # Si la letra se encuentra en el diccionario
-        if letra in valores:
-            # Obtenemos su valor
-            valor_actual = valores[letra]
+            a = valores.get(numero[i])
+
+            j = i + 1
+            if j < long:
+                b = valores.get(numero[j])
+
+                if a >= b:
+                    res = res + a
+                    i = i + 1
+                    count = count + 1
+
+                if a < b:
+                    res = res + (b - a)
+
+                    i = i + 1
+                    count = count + 1
+                    j = j+1
+                    if j == long:
+                        break
+                    else:
+                        i = i + 1
+            else:
+                res = res + a
+                print("resultado:", res)
+                break
+
         else:
-            # Si no, la letra es invalida
-            print('Valor invalido:', letra)
-            return 'NaN' # NaN: Not A Number
-
-        # Si el valor anterior es mayor o igual que el
-        # valor actual, se suman
-        if valor_anterior >= valor_actual:
-            resultado += valor_actual
-        # Si no, se restan
-        else:
-            # Esto equivale a:
-            # resultado = (resultado - valor_anterior) + (valor_actual - valor_anterior)
-            resultado += valor_actual - (2 * valor_anterior)
-
-        # El valor actual pasa a ser el anterior, para analizar
-        # la siguiente letra en el numero romano
-        valor_anterior = valor_actual
-
-    # Al terminar, retorna el numero resultante
-    return resultado
-
-# Con upper() la letra siempre sera pasada a mayuscula
-numero_romano = input("Numero Romano: ").upper()
-print("Numero Arabigo:", romano_a_arabigo(numero_romano))
+            print("no es número válido")
+            break
 
 
+romano_in = input("Número romano: ").upper()
+
+
+romanos(romano_in)
