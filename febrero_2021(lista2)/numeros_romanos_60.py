@@ -34,15 +34,32 @@ def romanos(numero):
                     count = count + 1
 
                 if a < b:
-                    res = res + (b - a)
-
-                    i = i + 1
-                    count = count + 1
-                    j = j+1
-                    if j == long:
+                    print("a:", a)
+                    if a == 5 or a == 50 or a == 500:
+                        print("número no válido1")
                         break
+                    if a == 1 and b != 5 and b != 10:
+                        print("número no válido2")
+                        break
+
+                    if a == 10 and b != 50 and b != 100:
+                        print("número no válido3")
+                        break
+
+
+
                     else:
+                        res = res + (b - a)
+                        print("resultado", res)
                         i = i + 1
+                        count = count + 1
+                        j = j + 1
+
+                        if j == long:
+                            break
+                        else:
+                            i = i + 1
+
             else:
                 res = res + a
                 print("resultado:", res)
